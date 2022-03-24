@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>ExpressJS TypeScript starter template</title>
+        <link
+            rel="stylesheet"
+            href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
+        />
+        <style>
+            body {
+                padding-top: 20px;
+                padding-bottom: 20px;
+            }
+            .jumbotron {
+                margin-top: 10px;
+            }
+        </style>
+    </head>
+    <body>
+        <%- include('header') -%>
+        <div class="container">
+            <h1>Home Page</h1>
+            <table>
+                <tr>
+                    <th>Email</th>
+                    <th>GivenName</th>
+                    <th>FamilyName</th>
+                    <th>CreatedAt</th>
+                </tr>
+
+                <% for (var i = 0; i < results.length; i++) { %>
+                <tr>
+                    <td><%= results[i].email %></td>
+                    <td><%= results[i].givenName %></td>
+                    <td><%= results[i].familyName %></td>
+                    <td><%= results[i].createdAt %></td>
+                    <td>
+                        <!-- <h3>
+              <a
+                href="/user/<%= results[i].id%>"
+                ,value="<%= results[i].id%>"
+                ,method="put"
+                >EDIT</a
+              >
+            </h3> -->
+                        <a
+                            class="btn btn-primary btn-xs"
+                            href="/edit/<%= results[i]._id%>"
+                            ><i class="fa fa-edit"></i>Edit</a
+                        >
+                        <a
+                            class="btn btn-danger btn-xs"
+                            href="/user/delete/<%= results[i]._id%>"
+                            ><i class="fa fa-trash"></i>Delete</a
+                        >
+                    </td>
+
+                    <!-- <td>
+            <form action="/employees/delete/<%= results[i].id%>" method="post">
+              <button type="submit">DELETE</button>
+            </form>
+          </td> -->
+                </tr>
+                <% } %>
+            </table>
+        </div>
+    </body>
+</html>

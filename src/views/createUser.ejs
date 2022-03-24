@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>ExpressJS TypeScript starter template</title>
+        <link
+            rel="stylesheet"
+            href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
+        />
+        <style>
+            body {
+                padding-top: 20px;
+                padding-bottom: 20px;
+            }
+            .jumbotron {
+                margin-top: 10px;
+            }
+        </style>
+    </head>
+    <body>
+        <%- include('header') -%>
+        <div class="container">
+            <h1><%= topicHead %></h1>
+            <form name="form1" method="POST" action="/user">
+                <table>
+                    <tr>
+                        <td>Email</td>
+                        <td><input type="text" name="email" /></td>
+                    </tr>
+                    <tr>
+                        <td>Given name</td>
+                        <td><input type="text" name="givenName" /></td>
+                    </tr>
+                    <tr>
+                        <td>Family name</td>
+                        <td><input type="text" name="familyName" /></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <input type="submit" value="Save" />
+                        </td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+    </body>
+</html>

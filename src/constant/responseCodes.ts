@@ -1,0 +1,5 @@
+export const ERROR_MESSAGE = 'Something went wrong'
+export const ASC_ORDER = 'asc'
+export const DESC_ORDER = 'desc'
+export const SECRET = 'SECRET'
+export const USER_ALREADY_EXIST = 'User Already Exist.'
